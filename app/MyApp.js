@@ -12,8 +12,13 @@ class MyApp extends Component {
           style = {{flex: 1, height: null, width: null }}
           />
        </View>
-       <View style = {{height: height/3, backgroundColor: 'white'}}>
-
+       <View style = {{height: height/3}}>
+        <View style = {styles.button}>
+          <Text style ={{fontSize: 20, fontWeight: 'bold'}}>Sign in</Text>
+        </View>
+        <View style = {{...styles.button, backgroundColor:'#2E71DC'}}>
+          <Text style ={{fontSize: 20, fontWeight: 'bold', color:'white'}}>Sign in with Facebook</Text>
+        </View>
        </View>
      </View>
     );
@@ -26,5 +31,14 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  button:{
+    backgroundColor: 'white',
+    height: 70,
+    marginHorizontal: 20,
+    borderRadius: 35,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 5
   }
 });
