@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Asset } from 'expo';
+import { Asset, AppLoading } from 'expo';
 
 
 function cacheImages(images){
@@ -28,6 +28,15 @@ export default class App extends React.Component {
   }
  
   render(){
+    if(!this.state.isReady){
+      return(
+        <AppLoading
+          startAsync = {this._loadAssetsAsync}
+          onFinish = {() => this.setState({ isReady: true })}
+          onError = {console.warn}
+          />
+      )
+    }
     return(
       <View></View>
     )
