@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Asset, AppLoading } from 'expo';
+import { Asset } from 'expo-asset';
+import { AppLoading } from 'expo';
 
 
 function cacheImages(images){
