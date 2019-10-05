@@ -1,11 +1,28 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Asset } from 'expo';
 
-export default function App() {
+
+function cacheImages(images){
+  return images.map(image =>{
+    if(typeof image == 'string'){
+      return Image.prefetch(image);
+    }else{
+      return Asset.fromModule(image).downloadAsync();
+    }
+  });
+}
+
+export default class App extends React.Component {
+
+  constructor(){
+    super()
+    this.state = {
+      isReady: false
+    }
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+    
   );
 }
 
