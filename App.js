@@ -21,9 +21,18 @@ export default class App extends React.Component {
       isReady: false
     }
   }
-  return (
-    
-  );
+
+  async _loadAssetsAsync(){
+    const imageAssets = cacheImages([require('./img/bg.jpg')]);
+    await Promise.all([...imageAssets]);
+  }
+ 
+  render(){
+    return(
+      <View></View>
+    )
+  }
+
 }
 
 const styles = StyleSheet.create({
